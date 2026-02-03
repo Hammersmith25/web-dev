@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pricing</title>
+
+<style>
+:root {
+  --text: #24292f;
+  --muted: #57606a;
+  --border: #d0d7de;
+  --bg: #ffffff;
+  --soft: #f6f8fa;
+  --blue: #0969da;
+  --green: #1f883d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+
+nav {
+  height: 64px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  font-size: 14px;
+}
+
+nav .left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav .right {
+  margin-left: auto;
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 16px 48px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.hero button {
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: #24292f;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pricing {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  width: 320px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.card .desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.price span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card button {
+  margin: 16px 0 20px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--soft);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+
+.enterprise {
+  border: 2px solid var(--blue);
+  box-shadow: 0 8px 24px rgba(9,105,218,0.15);
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: white;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.enterprise button.primary {
+  background: var(--blue);
+  color: white;
+  border: none;
+}
+
+.enterprise .secondary {
+  background: white;
+}
+
+
+@media (max-width: 1000px) {
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="left">
+    <strong>GitHub</strong>
+    <a href="#">Platform</a>
+    <a href="#">Solutions</a>
+    <a href="#">Resources</a>
+    <a href="#">Open Source</a>
+    <a href="#">Enterprise</a>
+    <a href="#">Pricing</a>
+  </div>
+  <div class="right">
+    <a href="#">Search</a>
+    <a href="#">Dashboard</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Try the Copilot-powered platform</h1>
+  <p>
+    We get it, there’s a lot you can do with GitHub. That’s why we’ve packed
+    all of it into a single risk-free trial that includes GitHub Enterprise,
+    Copilot, and Advanced Security.
+  </p>
+  <button>Start free for 30 days</button>
+</section>
+
+<section class="pricing">
+
+  <div class="card">
+    <h2>Free</h2>
+    <div class="desc">The basics for individuals and organizations</div>
+    <div class="price">$0 <span>USD / user / month</span></div>
+    <button>Create a free organization</button>
+    <ul>
+      <li>Unlimited public/private repositories</li>
+      <li>Dependabot security updates</li>
+      <li>2,000 CI/CD minutes/month</li>
+      <li>500MB packages storage</li>
+      <li>Issues & Projects</li>
+      <li>Community support</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Team</h2>
+    <div class="desc">Advanced collaboration for teams</div>
+    <div class="price">$4 <span>USD / user / month</span></div>
+    <button>Continue with Team</button>
+    <ul>
+      <li>Everything in Free</li>
+      <li>GitHub Codespaces access</li>
+      <li>Repository rules</li>
+      <li>Multiple reviewers</li>
+      <li>Pages & Wikis</li>
+      <li>Web-based support</li>
+    </ul>
+  </div>
+
+  <div class="card enterprise">
+    <div class="badge">RECOMMENDED</div>
+    <h2>Enterprise</h2>
+    <div class="desc">Security, compliance, and flexibility</div>
+    <div class="price">$21 <span>USD / user / month</span></div>
+    <button class="primary">Start a free trial</button>
+    <button class="secondary">Contact sales</button>
+    <ul>
+      <li>Everything in Team</li>
+      <li>Data residency</li>
+      <li>SCIM provisioning</li>
+      <li>SAML single sign-on</li>
+      <li>Advanced auditing</li>
+      <li>50,000 CI/CD minutes</li>
+    </ul>
+  </div>
+
+</section>
+
+</body>
+</html>
