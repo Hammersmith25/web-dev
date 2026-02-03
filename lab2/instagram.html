@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instagram</title>
+
+        <style>
+            body{
+                background-color: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .info{
+                width: 70%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .logo{
+
+            }
+            
+            .login-box{
+                background-color: #152127;
+                width: 30%;
+                height: 100vh;
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .login-box input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid #899caa;
+            background-color: #152127;
+            font-size: 17px;
+            color: white;
+            }
+            ::placeholder {
+                color: #899caa;
+            }
+            .login-btn {
+                width: 100%;
+                background-color: #1877f2;
+                color: #fff;
+                font-size: 20px;
+                font-weight: bold;
+                padding: 12px;
+                border: none;
+                border-radius: 50px;
+            }
+            #mock{
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class = info>
+            <img id="mock" src = "https://static.cdninstagram.com/rsrc.php/v4/yF/r/reN9rvYdLTB.png">
+        </div>
+        <div class = login-box>
+            <input type="text" placeholder="Email or phone number">
+            <input type="password" placeholder="Password">
+            <button class = login-btn>Log in</button>
+        </div>
+    </body>
+</html>
