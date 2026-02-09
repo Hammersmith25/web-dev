@@ -9,10 +9,17 @@ function addCard() {
     card.classList.add("card");
 
     const text = document.createElement("span");
+    text.classList.add("card-text");
     text.textContent = value;
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.addEventListener("change", function () {
+        const cardEl = this.closest(".card");
+        if (!cardEl) return;
+
+        cardEl.classList.toggle("completed", this.checked);
+    });
 
     const deleteBtn = document.createElement("img");
     deleteBtn.classList.add("delete-btn");
@@ -25,14 +32,20 @@ function addCard() {
         deleteCard(this);
     };
 
+    const actions = document.createElement("div");
+    actions.classList.add("card-actions");
+    actions.appendChild(checkbox);
+    actions.appendChild(deleteBtn);
+
     card.appendChild(text);
-    card.appendChild(checkbox);
-    card.appendChild(deleteBtn);
+    card.appendChild(actions);
 
     main.appendChild(card);
     input.value = "";
 }
 function deleteCard(button) {
-    const card = button.parentElement;
-    card.remove();
+    const card = button.closest(".card");
+    if (card) {
+        card.remove();
+    }
 }

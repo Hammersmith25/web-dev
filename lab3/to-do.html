@@ -44,6 +44,9 @@
                 display: flex;
                 justify-content: center;
             }
+            .addButton img {
+                user-select: none;
+            }
             .addButton:hover{
                 background-color:#378509;
                 transition: 0.2s;
@@ -60,6 +63,25 @@
                 width: 98%;
                 font-size: 18px;
                 
+            }
+            .card.completed {
+                background-color: #273a3b;
+                color: #f0f0f0;
+            }
+            .card img {
+                user-select: none;
+            }
+            .card-text {
+                flex: 1;
+                margin-right: 10px;
+                min-width: 0;
+                overflow-wrap: anywhere;
+            }
+            .card-actions {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-shrink: 0;
             }
             #main{
                 display: flex;
