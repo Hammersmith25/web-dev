@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-Do List</title>
+        <script src="script.js"></script>
+        <style>
+            body{
+                margin:0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #096e85;
+            }
+            .wrap{
+                background-color: #0b4447;
+                margin: 5% 0 1% 0;
+                width: 50%;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            input.text{
+                margin: 1%;
+                padding: 1%;
+                width: 90%;
+                font-size: 20px;
+                border-radius: 10px;
+                background-color: #105f63;
+                border: none;
+                color: bisque;
+                outline: none;
+            }
+            input[type="checkbox"] {
+                width: auto;
+                padding: 0;
+                margin: 0 8px 0 0;
+            }
+            .addButton{
+                background-color: #419c0c;
+                border-radius: 10px;
+                padding: 1%;
+                border:none;
+                display: flex;
+                justify-content: center;
+            }
+            .addButton:hover{
+                background-color:#378509;
+                transition: 0.2s;
+            }
+            .card{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #0b4447;
+                margin: 2px;
+                padding: 1%;
+                border-radius: 10px;
+                color: bisque;
+                width: 98%;
+                font-size: 18px;
+                
+            }
+            #main{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+            }
+            .delete-btn {
+                margin-right: 7px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = wrap>
+            <input class = text placeholder="Enter your task"> 
+            <button class = addButton onclick="addCard()">
+                <img src = "add.png" width="25" height="25">
+            </button>
+        </div>
+        <div id = main></div>
+        
+        
+
+    </body>
+</html>
