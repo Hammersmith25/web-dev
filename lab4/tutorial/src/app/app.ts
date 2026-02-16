@@ -1,18 +1,9 @@
 import {Component} from '@angular/core';
+import {User} from './user/user';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <section (mouseover)="showSecretMessage()">
-      There's a secret message for you, hover to reveal 👀
-      {{ message }}
-    </section>
-  `,
+  template: ` <app-user name="Simran" /> `,
+  imports: [User],
 })
-export class App {
-  message = '';
-
-  showSecretMessage() {
-  this.message = 'Way to go 🚀';
-  }
-}
+export class App {}
