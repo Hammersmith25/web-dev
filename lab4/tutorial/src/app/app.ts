@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   template: `
     <nav>
-      <a href="/">Home</a>
+      <a routerLink="/">Home</a>
       |
-      <a href="/user">User</a>
+      <a routerLink="/user">User</a>
     </nav>
-  <router-outlet/>
+    <router-outlet />
   `,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLink],
 })
 export class App {}
