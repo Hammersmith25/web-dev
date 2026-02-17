@@ -1,0 +1,52 @@
+<section class="detail-page" *ngIf="product as p; else notFound">
+  <h1 class="store-title">Kaspi.kz</h1>
+  <a class="back-link" [routerLink]="['/']">Back</a>
+
+  <div class="detail-card">
+    <div class="left-column">
+      <img class="main-image" [src]="selectedImage || p.image" [alt]="p.name" />
+
+      <div class="gallery">
+        <button
+          type="button"
+          class="thumb"
+          *ngFor="let image of p.images"
+          (click)="setImage(image)"
+        >
+          <img [src]="image" [alt]="p.name" />
+        </button>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <h2>{{ p.name }}</h2>
+      <p class="price">{{ p.price }} KZT</p>
+      <p class="rating">Rating: {{ p.rating }}/5</p>
+      <a class="kaspi-link" [href]="p.link" target="_blank" rel="noopener noreferrer">Open on Kaspi</a>
+
+      <div class="share-row">
+        <button type="button" class="share-btn" (click)="shareOnWhatsApp(p)">
+          <img [src]="whatsappIcon" alt="Share on WhatsApp" />
+          <span>Share</span>
+        </button>
+        <button type="button" class="share-btn" (click)="shareOnTelegram(p)">
+          <img [src]="telegramIcon" alt="Share on Telegram" />
+          <span>Share</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="description-block">
+    <h3>Description</h3>
+    <p>{{ p.description }}</p>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <section class="detail-page">
+    <h1 class="store-title">Kaspi.kz</h1>
+    <a class="back-link" [routerLink]="['/']">Back</a>
+    <p>Product not found.</p>
+  </section>
+</ng-template>
