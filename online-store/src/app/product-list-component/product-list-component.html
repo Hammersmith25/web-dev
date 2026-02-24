@@ -1,30 +1,12 @@
-<section class="home-page">
-  <h1 class="store-title">Kaspi.kz</h1>
-
-  <div class="product-grid">
-    <article class="product-card" *ngFor="let product of products">
-      <a class="card-link" [routerLink]="['/product', product.id]">
-        <div class="image-box">
-          <img class="product-image" [src]="product.image" [alt]="product.name" />
-        </div>
-
-        <div class="card-content">
-          <h3 class="product-name">{{ product.name }}</h3>
-          <p class="product-price">{{ product.price }} KZT</p>
-          <p class="product-rating">Rating: {{ product.rating }}/5</p>
-        </div>
-      </a>
-
-      <div class="share-row">
-        <button type="button" class="share-btn" (click)="shareOnWhatsApp(product)">
-          <img [src]="whatsappIcon" alt="Share on WhatsApp" />
-          <span>Share</span>
-        </button>
-        <button type="button" class="share-btn" (click)="shareOnTelegram(product)">
-          <img [src]="telegramIcon" alt="Share on Telegram" />
-          <span>Share</span>
-        </button>
-      </div>
-    </article>
-  </div>
-</section>
+@if (visibleProducts().length > 0) {
+  <section class="product-grid">
+    @for (product of visibleProducts(); track product.id) {
+      <app-product-item-component
+        [product]="product"
+        (deleteProduct)="onDeleteProduct($event)"
+      />
+    }
+  </section>
+} @else {
+  <p class="empty-message">No products in this category.</p>
+}

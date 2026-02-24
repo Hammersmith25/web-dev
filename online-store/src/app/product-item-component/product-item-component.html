@@ -1,0 +1,33 @@
+<article class="product-card">
+  <a class="card-link" [routerLink]="['/product', product().id]">
+    <div class="image-box">
+      <img class="product-image" [src]="product().image" [alt]="product().name" />
+    </div>
+
+    <div class="card-content">
+      <h3 class="product-name">{{ product().name }}</h3>
+      <p class="product-description">{{ product().description }}</p>
+      <p class="product-price">{{ product().price }} KZT</p>
+      <p class="product-rating">Rating: {{ product().rating }}/5</p>
+      <p class="product-likes">Likes: {{ product().likes }}</p>
+    </div>
+  </a>
+
+  <div class="actions-row">
+    <button type="button" class="action-btn" (click)="likeProduct()">Like</button>
+    <button type="button" class="action-btn delete-btn" (click)="removeProduct()">
+      Delete
+    </button>
+  </div>
+
+  <div class="share-row">
+    <button type="button" class="share-btn" (click)="shareOnWhatsApp()">
+      <img [src]="whatsappIcon" alt="Share on WhatsApp" />
+      <span>Share</span>
+    </button>
+    <button type="button" class="share-btn" (click)="shareOnTelegram()">
+      <img [src]="telegramIcon" alt="Share on Telegram" />
+      <span>Share</span>
+    </button>
+  </div>
+</article>

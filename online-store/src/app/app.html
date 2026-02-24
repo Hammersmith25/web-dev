@@ -1,3 +1,33 @@
+@if (isProductRoute()) {
+  <router-outlet />
+} @else {
+  <section class="home-page">
+    <h1 class="store-title">Kaspi.kz</h1>
 
+    <div class="content-layout">
+      <aside class="categories">
+        <h2>Categories</h2>
+        @for (category of categories; track category.id) {
+          <button
+            type="button"
+            class="category-btn"
+            [class.active]="selectedCategoryId() === category.id"
+            (click)="selectCategory(category.id)"
+          >
+            {{ category.name }}
+          </button>
+        }
+      </aside>
 
-<router-outlet />
+      <main class="main-content">
+        @if (selectedCategoryId() === null) {
+          <p class="welcome-message">
+            Select a category to view products.
+          </p>
+        } @else {
+          <app-product-list-component [products]="selectedProducts()" />
+        }
+      </main>
+    </div>
+  </section>
+}
