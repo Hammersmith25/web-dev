@@ -1,0 +1,29 @@
+.main {
+  margin: 20px;
+}
+
+.grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  padding: 8px;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.title {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.3;
+}

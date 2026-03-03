@@ -1,0 +1,14 @@
+<div class="main">
+  <button [routerLink]="['/Albums']">Back</button>
+
+  @if (currAlbum$ | async; as album) {
+    <p>Album ID: {{ album.id }}</p>
+    <p>User ID: {{ album.userId }}</p>
+    <p>Title:{{album.title}}</p>
+
+    <input type="text" [(ngModel)]="album.title" />
+    <button (click)="save(album)">Save</button>
+    <button [routerLink]="['/Album',album.id,'Photos']">View Photos</button>
+  }
+  
+</div>

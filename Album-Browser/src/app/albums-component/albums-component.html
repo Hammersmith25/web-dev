@@ -1,0 +1,16 @@
+<nav-bar></nav-bar>
+@if (isLoading()){
+    <p>Loading albums...</p>
+}
+@else {
+    <div class="main">
+    @for (album of (albums$ | async) ?? []; track album.id) {
+        <div class = "card" [routerLink]="['/Albums', album.id]">
+            <p>{{album.id}} <br> {{album.title}}</p>
+            <button class = "dlt" (click)="deleteAlbum(album.id);$event.stopPropagation()">delete</button>
+        </div>
+    }
+</div>
+}
+
+
